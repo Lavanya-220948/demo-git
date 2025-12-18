@@ -1,0 +1,156 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Library Management System</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+
+
+    /* Navbar */
+    nav {
+      background: #1e293b;
+      color: #fff;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav .logo { font-size: 20px; font-weight: bold; }
+    nav ul { list-style: none; display: flex; gap: 15px; }
+    nav ul li { cursor: pointer; }
+    nav ul li:hover { text-decoration: underline; }
+
+    /* Pages */
+    .page { display: none; padding: 30px; }
+    .active { display: block; }
+
+    /* Login Page */
+    .login-container {
+      max-width: 500px;
+      margin: 80px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .login-container h2 { margin-bottom: 20px; }
+    .login-buttons button {
+      margin: 10px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background: #2563eb;
+      color: white;
+      font-size: 16px;
+    }
+    .login-buttons button:hover { background: #1d4ed8; }
+
+    /* Search Bar */
+    .search-box {
+      max-width: 400px;
+      margin-top: 20px;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    /* Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: white;
+    }
+    table th, table td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+    table th {
+      background: #e5e7eb;
+    }
+  </style>
+</head>
+<body style= "background-image: url( 'C:/Users/lavanya/Downloads/aebff0ed085370362da5a37c09fb39ae.jpg') no-repeat center center; background-size: cover; " >
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Library Management</div>
+    <ul>
+      <li onclick="showPage('login')">Home</li>
+      <li onclick="showPage('student')">Student</li>
+      <li onclick="showPage('teacher')">Teacher</li>
+      <li onclick="showPage('librarian')">Librarian</li>
+    </ul>
+  </nav>
+
+  <!-- Login Page -->
+  <div id="login" class="page active">
+    <div class="login-container">
+      <h2>Login As</h2>
+      <div class="login-buttons">
+        <button onclick="showPage('student')">Student</button>
+        <button onclick="showPage('teacher')">Teacher</button>
+        <button onclick="showPage('librarian')">Librarian</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Student Page -->
+  <div id="student" class="page">
+    <h2>Student Page</h2>
+    <p>Search for books:</p>
+    <div class="search-box">
+      <input type="text" placeholder="Search by book name or ID" />
+    </div>
+  </div>
+
+  <!-- Teacher Page -->
+  <div id="teacher" class="page">
+    <h2>Teacher Page</h2>
+    <p>Search for books:</p>
+    <div class="search-box">
+      <input type="text" placeholder="Search by book name or ID" />
+    </div>
+  </div>
+
+  <!-- Librarian Page -->
+  <div id="librarian" class="page">
+    <h2>Librarian Page</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Book Name</th>
+          <th>Book ID</th>
+          <th>Date</th>
+          <th>Report Date</th>
+          <th>Due</th>
+          <th>Fines</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        </tr>
+      </tbody>
+     
+
+  <script>
+    function showPage(pageId) {
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(page => page.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
