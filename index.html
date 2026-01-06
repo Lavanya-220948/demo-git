@@ -177,7 +177,9 @@
         <h2>Librarian Section</h2>
         <table>
             <tr>
+                <th>issued_to</th>
                 <th>Book Name</th>
+
                 <th>Book ID</th>
                 <th>Issue Date</th>
                 <th>Return Date</th>
@@ -185,13 +187,23 @@
                 <th>Fine</th>
             </tr>
             <tr>
-                <td>Clean Code</td>
+                <td>kiara</td>
+                <td>atomic habits</td>
                 <td>B102</td>
                 <td>01-04-2025</td>
                 <td>15-04-2025</td>
                 <td>No</td>
                 <td>₹0</td>
             </tr>
+<tr>
+                <td>rani</td>
+                <td>twin roses</td>
+                <td>B22</td>
+                <td>01-04-2025</td>
+                <td>15-04-2025</td>
+                <td>No</td>
+                <td>₹0</td>
+            </tr>            
         </table>
     </section>
 
@@ -202,14 +214,12 @@
 
 </div>
 <script>
-/* =====================================================
-   1. VARIABLES
-   ===================================================== */
 
-// const variable (cannot be reassigned)
+
+// const variable 
 const libraryName = "Central Digital Library";
 
-// let variables (can be reassigned)
+// let variables 
 let totalBooks = 120;
 let libraryStatus = "Open";
 
@@ -217,19 +227,16 @@ console.log("Library Name:", libraryName);
 console.log("Total Books:", totalBooks);
 console.log("Library Status:", libraryStatus);
 
-// Attempt to reassign const (commented to avoid error)
-// libraryName = "New Library"; // ❌ Error
 
-// Dynamic update using let
+
+
 function updateBooks() {
     totalBooks += 10;
     document.getElementById("bookCount").innerText = totalBooks;
     console.log("Updated Book Count:", totalBooks);
 }
 
-/* =====================================================
-   2. FUNCTIONS
-   ===================================================== */
+
 
 // Function declaration
 function showWelcome() {
@@ -252,16 +259,14 @@ function calculateFine(daysLate) {
     return daysLate * 5;
 }
 
-/* =====================================================
-   3. OBJECTS
-   ===================================================== */
+
 
 const librarian = {
     name: "Anita",
     role: "Librarian",
     experience: 5,
 
-    // 4. METHOD
+    //METHOD
     updateExperience: function () {
         this.experience++;
         document.getElementById("experience").innerText = this.experience;
@@ -272,9 +277,7 @@ console.log(librarian);
 console.log(librarian.name);          // dot notation
 console.log(librarian["role"]);       // bracket notation
 
-/* =====================================================
-   5. POP-UP BOXES
-   ===================================================== */
+
 
 function askUserName() {
     let userName = prompt("Enter your name:");
@@ -291,9 +294,7 @@ function confirmUpdate() {
     }
 }
 
-/* =====================================================
-   6. EVENTS & EVENT LISTENERS
-   ===================================================== */
+
 
 document.addEventListener("DOMContentLoaded", () => {
 
