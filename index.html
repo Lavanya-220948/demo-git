@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -319,3 +320,326 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+=======
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library Management System</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: url("image.jpg") no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        /* Overlay */
+        .overlay {
+            background: rgba(0, 0, 0, 0.6);
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            background-color: #1e293b;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #334155;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+         
+ 
+
+        /* Sections */
+        section {
+            padding: 30px;
+            margin: 20px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        section h2 {
+            margin-bottom: 15px;
+            color: #1e293b;
+        }
+
+        /* Search */
+        .search-box input {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        table th, table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        table th {
+            background-color: #e5e7eb;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e293b;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="overlay">
+
+    <!-- HEADER -->
+    <header>
+        <h1>Library Management System</h1>
+        <p>Welcome to the Digital Library</p>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#student">Student</a></li>
+            <li><a href="#teacher">Teacher</a></li>
+            <li><a href="#librarian">Librarian</a></li>
+        </ul>
+    </nav>
+
+    <!-- HOME -->
+    <section id="home">
+        <h2>Home</h2>
+        <p>
+            This Library Management System helps students, teachers,
+            and librarians to manage and view books efficiently.
+        </p>
+        <p><b>Library Name:</b> Central Digital Library</p>
+<p><b>Total Books:</b> <span id="bookCount">120</span></p>
+<p><b>Status:</b> <span id="status">Open</span></p>
+<p><b>Librarian Experience:</b> <span id="experience">5</span> years</p>
+<p><b>User:</b> <span id="userName">Guest</span></p>
+
+<button id="welcomeBtn">Show Welcome</button>
+<button onclick="confirmUpdate()">Update Books</button>
+<button onclick="askUserName()">Enter Name</button>
+<button onclick="librarian.updateExperience()">Update Experience</button>
+
+    </section>
+
+    <!-- STUDENT -->
+    <section id="student">
+        <h2>Student Section</h2>
+        <p>Search books:</p>
+        <div class="search-box">
+            <input type="text" placeholder="Search by book name or ID">
+        </div>
+    </section>
+
+    <!-- TEACHER -->
+    <section id="teacher">
+        <h2>Teacher Section</h2>
+        <table>
+            <tr>
+                <th>Book Name</th>
+                <th>Issue Date</th>
+                <th>Cost</th>
+                <th>Return Date</th>
+            </tr>
+            <tr>
+                <td>Reborn From Ashes</td>
+                <td>29-03-2025</td>
+                <td>₹250</td>
+                <td>10-04-2025</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- LIBRARIAN -->
+    <section id="librarian">
+        <h2>Librarian Section</h2>
+        <table>
+            <tr>
+                <th>issued_to</th>
+                <th>Book Name</th>
+
+                <th>Book ID</th>
+                <th>Issue Date</th>
+                <th>Return Date</th>
+                <th>Due</th>
+                <th>Fine</th>
+            </tr>
+            <tr>
+                <td>kiara</td>
+                <td>atomic habits</td>
+                <td>B102</td>
+                <td>01-04-2025</td>
+                <td>15-04-2025</td>
+                <td>No</td>
+                <td>₹0</td>
+            </tr>
+<tr>
+                <td>rani</td>
+                <td>twin roses</td>
+                <td>B22</td>
+                <td>01-04-2025</td>
+                <td>15-04-2025</td>
+                <td>No</td>
+                <td>₹0</td>
+            </tr>            
+        </table>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 Library Management System</p>
+    </footer>
+
+</div>
+<script>
+
+
+// const variable 
+const libraryName = "Central Digital Library";
+
+// let variables 
+let totalBooks = 120;
+let libraryStatus = "Open";
+
+console.log("Library Name:", libraryName);
+console.log("Total Books:", totalBooks);
+console.log("Library Status:", libraryStatus);
+
+
+
+
+function updateBooks() {
+    totalBooks += 10;
+    document.getElementById("bookCount").innerText = totalBooks;
+    console.log("Updated Book Count:", totalBooks);
+}
+
+
+
+// Function declaration
+function showWelcome() {
+    alert("Welcome to the Library Management System");
+}
+
+// Function expression
+const changeStatus = function () {
+    libraryStatus = "Closed";
+    document.getElementById("status").innerText = libraryStatus;
+};
+
+// Arrow function
+const greetUser = (name) => {
+    return "Hello " + name + ", happy reading!";
+};
+
+// Function with parameters + return
+function calculateFine(daysLate) {
+    return daysLate * 5;
+}
+
+
+
+const librarian = {
+    name: "Anita",
+    role: "Librarian",
+    experience: 5,
+
+    //METHOD
+    updateExperience: function () {
+        this.experience++;
+        document.getElementById("experience").innerText = this.experience;
+    }
+};
+
+console.log(librarian);
+console.log(librarian.name);          // dot notation
+console.log(librarian["role"]);       // bracket notation
+
+
+
+function askUserName() {
+    let userName = prompt("Enter your name:");
+    if (userName) {
+        document.getElementById("userName").innerText = userName;
+        alert("Welcome " + userName);
+    }
+}
+
+function confirmUpdate() {
+    let choice = confirm("Do you want to update book count?");
+    if (choice) {
+        updateBooks();
+    }
+}
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    // Click event – content change
+    document.getElementById("welcomeBtn")
+        .addEventListener("click", showWelcome);
+
+    // Mouseover event – style change
+    document.getElementById("home")
+        .addEventListener("mouseover", function () {
+            this.style.backgroundColor = "#ffff00";
+        });
+
+    // Mouseout event – reset style
+    document.getElementById("home")
+        .addEventListener("mouseout", function () {
+            this.style.backgroundColor = "white";
+        });
+
+});
+</script>
+
+</body>
+</html>
+>>>>>>> e29e784ed58de88f72a9f29ba13f987a0758d197
