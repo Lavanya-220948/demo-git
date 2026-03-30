@@ -58,6 +58,8 @@
 <button onclick="confirmUpdate()">Update Books</button>
 <button onclick="askUserName()">Enter Name</button>
 <button onclick="librarian.updateExperience()">Update Experience</button>
+<button id="googleLoginBtn" onclick="googleLogin()">Login with Google</button>
+<button id="logoutBtn" onclick="googleLogout()" style="display: none;">Logout</button>
 
     </section>
 
@@ -131,7 +133,12 @@
 
 </div>
 
+<!-- Firebase Compat SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-auth-compat.js"></script>
+
 <!-- connect js -->
+<script src="auth.js"></script>
 <script src="script.js"></script>
 
 </body>
