@@ -50,8 +50,11 @@ curl_setopt($ch, CURLOPT_URL, $token_url);
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($post_fields));
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 $response = curl_exec($ch);
-curl_close($ch);
+if ($response === false) {
+    die("cURL Error (Token): " . curl_error($ch));
+}
 $token_data = json_decode($response, true);
 if (!isset($token_data['access_token'])) {
  echo "<pre>";
@@ -67,8 +70,11 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, [
  "Authorization: Bearer " . $access_token
 ]);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 $userinfo = curl_exec($ch);
-curl_close($ch);
+if ($userinfo === false) {
+    die("cURL Error (UserInfo): " . curl_error($ch));
+}
 $user = json_decode($userinfo, true);
 // Step 5: Show result
 echo "<h2>Login Successful </h2>";
