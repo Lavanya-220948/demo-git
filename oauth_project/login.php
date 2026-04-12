@@ -79,4 +79,4 @@ echo "<p><strong>Email:</strong> " . htmlspecialchars($user['email'] ?? '') .
 if (!empty($user['picture'])) {
  echo "<img src='" . htmlspecialchars($user['picture']) . "' width='120'>";
 }
-echo "<br><br><a href='index.html'>Go back to Home</a>";
+echo "<br><br><a href='../index.html'>Go back to Home</a>";

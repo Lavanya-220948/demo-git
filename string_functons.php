@@ -1,103 +1,17 @@
-<<<<<<< HEAD
 <?php
 
-echo "<h2>PHP Datatypes</h2>";
+echo "<h2>PHP String Functions</h2>";
 
-// Datatypes
-$str = "Hello PHP";
-$int = 100;
-$float = 10.55;
-$bool = true;
-$arr = array("Apple", "Banana", "Mango");
+$str = "Hello World!";
+echo "Original String: $str <br>";
 
-echo "String: $str <br>";
-echo "Integer: $int <br>";
-echo "Float: $float <br>";
-echo "Boolean: $bool <br>";
-echo "Array: ";
-print_r($arr);
-
-echo "<hr>";
-
-/* LOCAL SCOPE */
-echo "<h3>Local Scope</h3>";
-function localTest() {
-    $x = 10;  // local variable
-    echo "Local variable inside function: $x <br>";
-}
-localTest();
-// echo $x; // will give error
-
-/* GLOBAL SCOPE */
-echo "<h3>Global Scope</h3>";
-$g = 50;
-function globalTest() {
-    global $g;
-    echo "Global variable inside function: $g <br>";
-}
-globalTest();
-
-/* STATIC SCOPE */
-echo "<h3>Static Scope</h3>";
-function staticTest() {
-    static $count = 0;
-    $count++;
-    echo "Static count value: $count <br>";
-}
-staticTest();
-staticTest();
-staticTest();
+echo "Length: " . strlen($str) . "<br>";
+echo "Word Count: " . str_word_count($str) . "<br>";
+echo "Reverse: " . strrev($str) . "<br>";
+echo "Position of 'World': " . strpos($str, "World") . "<br>";
+echo "Replace 'World' with 'PHP': " . str_replace("World", "PHP", $str) . "<br>";
+echo "Uppercase: " . strtoupper($str) . "<br>";
+echo "Lowercase: " . strtolower($str) . "<br>";
+echo "Substring (0, 5): " . substr($str, 0, 5) . "<br>";
 
 ?>
-=======
-<?php
-
-echo "<h2>PHP Datatypes</h2>";
-
-// Datatypes
-$str = "Hello PHP";
-$int = 100;
-$float = 10.55;
-$bool = true;
-$arr = array("Apple", "Banana", "Mango");
-
-echo "String: $str <br>";
-echo "Integer: $int <br>";
-echo "Float: $float <br>";
-echo "Boolean: $bool <br>";
-echo "Array: ";
-print_r($arr);
-
-echo "<hr>";
-
-/* LOCAL SCOPE */
-echo "<h3>Local Scope</h3>";
-function localTest() {
-    $x = 10;  // local variable
-    echo "Local variable inside function: $x <br>";
-}
-localTest();
-// echo $x; // will give error
-
-/* GLOBAL SCOPE */
-echo "<h3>Global Scope</h3>";
-$g = 50;
-function globalTest() {
-    global $g;
-    echo "Global variable inside function: $g <br>";
-}
-globalTest();
-
-/* STATIC SCOPE */
-echo "<h3>Static Scope</h3>";
-function staticTest() {
-    static $count = 0;
-    $count++;
-    echo "Static count value: $count <br>";
-}
-staticTest();
-staticTest();
-staticTest();
-
-?>
->>>>>>> e29e784ed58de88f72a9f29ba13f987a0758d197

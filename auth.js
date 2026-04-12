@@ -1,11 +1,11 @@
 // Firebase Configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyACnL25YssweGPswuseVYoQO_gRFpfJr8k",
-    authDomain: "hospital-auth-3080b.firebaseapp.com",
-    projectId: "hospital-auth-3080b",
-    storageBucket: "hospital-auth-3080b.firebasestorage.app",
-    messagingSenderId: "998121964570",
-    appId: "1:998121964570:web:572aca645b759b96b23da3"
+    apiKey: "AIzaSyABm6ILiBzmhfxhaTG4KK_t-ecCJ_UUmUc",
+    authDomain: "project-2191106719420160405.firebaseapp.com",
+    projectId: "project-2191106719420160405",
+    storageBucket: "project-2191106719420160405.firebasestorage.app",
+    messagingSenderId: "1033107859301",
+    appId: "1:1033107859301:web:73ce0a494b2e47689ca38c"
 };
 
 // Initialize Firebase
